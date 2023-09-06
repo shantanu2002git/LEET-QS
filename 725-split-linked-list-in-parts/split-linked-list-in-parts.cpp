@@ -14,7 +14,7 @@ public:
         int ext = len % k;
         tem = root;
         
-        for (int i = 0; i < k; i++) {
+        while (tem) {
             res.push_back(tem);
             int strt_len = 1;
             
@@ -34,7 +34,10 @@ public:
                 tem = x;
             }
         }
-        
+         while(len<k){
+         res.push_back(NULL);
+         len++;
+     }
         return res;
     }
 };

@@ -8,7 +8,7 @@ public:
        int wid=abs(sx-fx);
        int hig=abs(sy-fy);
 
-       int extraT=abs(wid-hig);
+       int extraT=abs(wid-hig);//Calculate the number of diagonal moves needed corner_moves as the absolute difference between height and width.
        return (min(wid,hig)+extraT)<=t;
        
     }

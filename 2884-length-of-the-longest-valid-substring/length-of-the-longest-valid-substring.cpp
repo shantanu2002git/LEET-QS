@@ -2,9 +2,11 @@ class Solution {
 public:
     int longestValidSubstring(string word, vector<string>& forbidden) {
        int n=word.size();
-       unordered_map<string,int>mp;
+  
+       set<string>st;
         for(auto it:forbidden){
-            mp[it]=1;
+            
+            st.insert(it);
         }
         string ans;
         int fans=0;
@@ -15,12 +17,13 @@ public:
             int idx=-1;
             for(int j=max(0,m-10);j<m;j++){
                 string curr=ans.substr(j);
-                if(mp.find(curr)!=mp.end()){
-                    idx=j;
+              
+                if(st.count(curr)){
+                  idx=j+1;
                 }
             }
             if(idx!=-1){
-                ans=ans.substr(idx+1);
+                ans=ans.substr(idx);
             }
             fans=max(fans,(int)ans.size());
         }

@@ -8,7 +8,7 @@ public:
 for(int i=0; i<n; i++){
 if(candies[i]+ex>=mx){
     res.push_back(true);
-    mx=max(mx,candies[i]);
+   
 }else{
      res.push_back(false);
 }

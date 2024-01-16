@@ -22,10 +22,8 @@ los[ls]++;
            }
        }
 
-vector<vector<int>>ans;
-ans.push_back(not_lost);
-ans.push_back(one_lost);
-       return ans;
+
+       return {not_lost,one_lost};
 
 
     }

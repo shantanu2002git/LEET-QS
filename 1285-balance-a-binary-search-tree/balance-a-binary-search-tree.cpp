@@ -10,14 +10,15 @@ public:
     }
 
     TreeNode* Tree(vector<int>& arr, int st, int en) {
-        if (st > en) {
-            return NULL;
-        }
-        int md = (st + en) / 2;
-        TreeNode* nod = new TreeNode(arr[md]);
-        nod->left = Tree(arr, st, md - 1);
-        nod->right = Tree(arr, md + 1, en);
-        return nod;
+       if(st>en){
+           return NULL;
+       }
+       int md=(st+en)/2;
+       TreeNode* nod=new TreeNode(arr[md]);
+       nod->left=Tree(arr,st,md-1);
+       nod->right=Tree(arr,md+1,en);
+
+       return nod;
     }
 
     TreeNode* balanceBST(TreeNode* root) {

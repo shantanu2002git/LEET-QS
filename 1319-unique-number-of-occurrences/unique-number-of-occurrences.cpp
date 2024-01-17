@@ -2,7 +2,7 @@ class Solution {
 public:
     bool uniqueOccurrences(vector<int>& arr) {
         set<int>st;
-        map<int,int>mp;
+        map<int,int>mp; // O(n) TC / O(n) SC
         for(auto it : arr){
             mp[it]++;
         }

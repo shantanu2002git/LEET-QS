@@ -1,18 +1,20 @@
 #include <cstring>
-
+/*
+Time Complexity :- O(Start * K)
+Space Complexity :- O(Start * K)
+*/
 class Solution {
 public:
     int dp[5001][1001];
     long long mod = 1e9 + 7;
 
     int call_dp(int start, int end, int k) {
-        if (k == 0) {
-            if (start == end) {
-                return 1;
-            } else {
-                return 0;
-            }
+        if (k == 0 && start==end) {
+           return 1;
+        }else if(k==0){
+            return 0;
         }
+
 
         if (dp[start + 1000][k] != -1) {
             return dp[start + 1000][k];

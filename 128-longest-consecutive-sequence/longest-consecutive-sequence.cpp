@@ -12,14 +12,16 @@ public:
         sort(nums.begin(), nums.end());
 
         for (int i = 1; i < n; i++) {
-            if (nums[i - 1] != nums[i]) {
+            if (nums[i - 1] == nums[i]) {
+                continue;
+            }
                 if (nums[i] == nums[i - 1] + 1) {
                     cn++;
                 } else {
                     mx = max(mx, cn);
                     cn = 1;
                 }
-            }
+            
         }
 
         return max(mx, cn);

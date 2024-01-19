@@ -1,16 +1,29 @@
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
-        vector<int>store=nums;
-       sort(nums.begin(),nums.end());
-       int st=0,en=nums.size()-1;
-       while(st<=en && store[st]==nums[st]){
-           st++;
-       }
-       while(en>=0 && store[en]==nums[en]){
-           en--;
-       }
+        int end = -1;
+        int max = nums[0];
+        for(int i = 1; i < nums.size(); i++){
+            if(max > nums[i]){ // the left value is greater then current value
+                end = i; // mark that index with end
+            }
+            else{
+                max = nums[i];
+            }
+        }
+        
+        int start = 0;
+        int min = nums[nums.size() - 1];
+        for(int i = nums.size() - 2; i >= 0; i--){
+            if(min < nums[i]){ // the right value is smaller then current value
+                start = i; // mark that index with start
+            }
+            else{
+                min = nums[i];
+            }
+        }
 
-       return (st>en || en<0) ? 0 : (abs(en-st+1));
+        cout<<max<<"-"<<end<<" + "<<min<<" "<<start<<endl;
+        return end - start + 1;
     }
 };

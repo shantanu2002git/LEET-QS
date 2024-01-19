@@ -20,7 +20,7 @@ public:
            }
            for(auto it : adj[nod]){
                int to=it.first, prc=it.second;
-               if(pric+prc<cost[to] && stp<=k){
+               if(pric+prc<cost[to]){
                   cost[to]=pric+prc;
                   q.push({stp+1,{to,cost[to]}});
                }

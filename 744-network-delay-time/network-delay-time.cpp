@@ -1,4 +1,4 @@
-class Solution {
+class Solution { //https://leetcode.com/problems/cheapest-flights-within-k-stops/
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
         vector<int>vis(n+1,INT_MAX); // a network of n nodes, labeled from 1 to n
@@ -7,13 +7,14 @@ public:
             adj[it[0]].push_back({it[1],it[2]});
         }
 
-        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+        // priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+        queue<pair<int,int>>pq;
         vis[k]=0;
         pq.push({0,k});
 
         while(!pq.empty()){
-            int mincost=pq.top().first;
-            int topnd=pq.top().second;
+            int mincost=pq.front().first;
+            int topnd=pq.front().second;
         pq.pop();
         for(auto it : adj[topnd]){
             int nib=it.first;

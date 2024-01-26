@@ -12,7 +12,7 @@ public:
             return 1;
         }
 
-        if (maxMove == 0) {
+        if (maxMove <= 0) {
             return 0;
         }
 

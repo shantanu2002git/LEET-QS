@@ -11,7 +11,6 @@ public:
 
         for (int i = 0; i < si; i++) {
             int cnt = 0;
-
             for (int j = i; j < si; j++) {
                 if (s[j] == 'R') {
                     y = y + 1;

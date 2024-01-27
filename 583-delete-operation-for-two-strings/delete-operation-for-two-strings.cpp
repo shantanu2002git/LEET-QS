@@ -1,23 +1,24 @@
 class Solution {
 public:
-    int caldp(string w1, string w2, int idx1, int idx2, vector<vector<int>>&dp){
-        if(idx1<0 || idx2<0){
-            return 0;
-        }
-        if(dp[idx1][idx2] != -1){
-            return dp[idx1][idx2];
-        }
-        if(w1[idx1]==w2[idx2]){
-         return   dp[idx1][idx2] = 1+caldp(w1,w2,idx1-1,idx2-1,dp);
-        }
-  dp[idx1][idx2] =max(caldp(w1,w2,idx1-1,idx2,dp), caldp(w1,w2,idx1,idx2-1,dp));
-        
-        return dp[idx1][idx2];
-    }
-    
-    int minDistance(string w1, string w2) {
-        int n1=w1.size(),n2=w2.size();
-        vector<vector<int>>dp(n1+1,(vector<int>(n2+1,-1)));
-        return n1+n2-2*caldp(w1,w2,n1-1,n2-1,dp);
+int call(int n1, int n2, string wd1, string wd2, vector<vector<int>>&dp){
+if(n1<0  || n2<0){
+    return 0;
+}
+
+int tt=0,nnt=0;
+if(dp[n1][n2]!=-1){
+    return dp[n1][n2];
+}
+if(wd1[n1]==wd2[n2]){
+    tt=1+call(n1-1,n2-1,wd1,wd2,dp);
+}else {
+    nnt=max(call(n1-1,n2,wd1,wd2,dp),call(n1,n2-1,wd1,wd2,dp));
+}
+return dp[n1][n2]=max(tt,nnt);
+}
+    int minDistance(string wd1, string wd2) {
+        int n=wd1.size(),m=wd2.size();
+        vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
+        return (n+m)-2*call(n-1,m-1,wd1,wd2,dp);
     }
 };

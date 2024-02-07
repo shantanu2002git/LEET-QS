@@ -10,7 +10,7 @@ public:
             mp[it]++;
         }
 
-        vector<pair<char, int>> vec(mp.begin(), mp.end());
+      vector<pair<char, int>> vec(mp.begin(), mp.end());
 
         sort(vec.begin(), vec.end(), [](pair<char, int> a1, pair<char, int> a2) {
             return a1.second > a2.second;

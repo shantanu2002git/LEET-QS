@@ -21,7 +21,7 @@ stack<pair<int,int>>st;
         }
         */
         st.push({price,c});
-        return c;
+        return st.top().second;
     }
 };
 

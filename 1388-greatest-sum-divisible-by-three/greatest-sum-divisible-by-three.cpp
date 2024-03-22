@@ -1,25 +1,27 @@
 class Solution {
 public:
-    vector<vector<int>> dp;
-
-    int solve(const vector<int>& nums, int i, int mod) {
-        if (i >= nums.size()) {
-            if (mod == 0)
+    int call(int i, int s, int n, vector<int>& nums, vector<vector<int>>& memo) {
+        if (i == n) {
+            if (s == 0) {
                 return 0;
-            return INT_MIN; // representing negative infinity
+            }
+            return -1e9;
         }
         
-        if (dp[i][mod] != -1)
-            return dp[i][mod];
+        if (memo[i][s] != -1) {
+            return memo[i][s];
+        }
+        
+        int tt = nums[i] + call(i + 1, (s + nums[i]) % 3, n, nums, memo);
+        int nn = call(i + 1, s, n, nums, memo);
 
-        int take = nums[i] + solve(nums, i + 1, (mod + nums[i]) % 3);
-        int notTake = solve(nums, i + 1, mod);
-
-        return dp[i][mod] = max(take, notTake);
+        return memo[i][s] = max(tt, nn);
     }
 
     int maxSumDivThree(vector<int>& nums) {
-        dp = vector<vector<int>>(nums.size(), vector<int>(3, -1));
-        return solve(nums, 0, 0);
+        int n = nums.size();
+        vector<vector<int>> memo(n, vector<int>(3, -1)); // Memoization table
+
+        return call(0, 0, n, nums, memo);
     }
 };

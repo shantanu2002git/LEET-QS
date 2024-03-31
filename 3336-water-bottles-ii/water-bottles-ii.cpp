@@ -15,21 +15,15 @@ public:
         int res = 0;
         while (nb > 0) {
             if (nb >= ex) {
-                cout<<nb<<" ["<<ex<<"] "<<endl;
                 nb = nb - ex;
-                 cout<<nb<<" ["<<ex<<"] "<<endl;
                 res = res + ex;
-               nb = nb + 1;
-
+                nb = nb + 1;
                 ex = ex + 1;
-                 cout<<nb<<" ["<<ex<<"] "<<endl;
-                 cout<<"......................."<<endl;
-              
             } else {
                 break;
             }
         }
-        cout<<nb;
-        return res+nb;
+     
+        return res + nb;
     }
 };

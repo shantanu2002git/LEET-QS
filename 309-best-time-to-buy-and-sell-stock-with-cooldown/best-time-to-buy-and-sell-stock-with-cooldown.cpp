@@ -1,43 +1,26 @@
 class Solution {
-
-     // Memoization Soltion
-    // Time : O(N)
-    // Space : O(N)
-   
-    int solveMemo(vector<int>& prices, int day, bool buy, vector<vector<int>> &memo){
-        
-        if(day >= prices.size()){
-            return 0;
-        }
-        
-        int &ans = memo[day][buy];
-        
-        if(ans != -1){
-            return ans;
-        }
-        
-        // First Choice
-        int ans1 = solveMemo(prices, day + 1, buy, memo); // no transaction this day
-        
-        
-        // Second Choice
-        int ans2 = 0;
-        // doing the required transaction this day
-        if(buy){
-            ans2 = -prices[day] + solveMemo(prices, day + 1, false, memo);
-        }else{
-            ans2 = prices[day] + solveMemo(prices, day + 2, true, memo);
-        }
-        
-        return ans = max(ans1, ans2);
-        
-    }
-    
 public:
-    int maxProfit(vector<int>& prices) {
-        int ans=0;
-        vector<vector<int>> memo(prices.size() + 2, vector<int>(2, -1));
-        ans = solveMemo(prices, 0, true, memo);
-        return ans;
+int call(int i , int by, int n, vector<int>&p,vector<vector<int>>&dp){
+if(i>=n){
+    return 0;
+}
+if(dp[i][by]!=-1){
+    return dp[i][by];
+}
+// No need to take 
+int mx1=0,mx2=0;
+// mx1=call(i+1,1,n,p,dp);
+if(by==1){
+    mx2=max(-p[i]+call(i+1,0,n,p,dp),0+call(i+1,1,n,p,dp));
+}else{
+    mx2=max(+p[i]+call(i+2,1,n,p,dp), 0+call(i+1,0,n,p,dp));
+}
+return dp[i][by]=max(mx1,mx2);
+
+}
+    int maxProfit(vector<int>& p) {
+       int n=p.size();
+       vector<vector<int>>dp(n+1,vector<int>(2,-1));
+       return call(0,1,n,p,dp); 
     }
 };

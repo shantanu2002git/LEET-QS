@@ -25,6 +25,7 @@ public:
       
         call(root->left, s);
         call(root->right, s);
+        s.pop_back();
     }
     int sumNumbers(TreeNode* root) {
         string s = "";

@@ -11,8 +11,8 @@
  * };
  */
 class Solution {
-public:
-    string res = "";//res="zzzzzzz";
+public://129. Sum Root to Leaf Numbers
+    string res = ""; // res="zzzzzzz";
     void call(TreeNode* root, string s) {
         if (root == NULL) {
             return;
@@ -20,14 +20,14 @@ public:
         s = s + char('a' + root->val);
         if (root->left == NULL && root->right == NULL) {
             reverse(s.begin(), s.end());
-            if(res.empty() || s<res){
-                res=s;
+            if (res.empty() || s < res) {
+                res = s;
             }
             // res = min(res, s);
         }
         call(root->left, s);
         call(root->right, s);
-        s.pop_back();
+        // s.pop_back();
     }
     string smallestFromLeaf(TreeNode* root) {
         string s = "";

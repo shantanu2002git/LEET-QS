@@ -1,40 +1,32 @@
 class Solution {
 public:
-    int n, m;
-    bool is_in(int x, int y) { return (x < n && x >= 0 && y < m && y >= 0); }
-    void call(int x, int y, vector<vector<char>>& grid) {
-        int dx[4] = {1, -1, 0, 0}, dy[4] = {0, 0, 1, -1};
-        queue<pair<int, int>> q;
-
-        q.push({x, y});
-        grid[x][y] = '0';
-        while (!q.empty()) {
-            int n = q.size();
-            while (n--) {
-                auto it = q.front();
-                q.pop();
-                int nx = it.first, ny = it.second;
-                for (int i = 0; i < 4; i++) {
-                    int dnx = nx + dx[i], dny = ny + dy[i];
-                    if (is_in(dnx, dny) && grid[dnx][dny] == '1') {
-                        q.push({dnx, dny});
-                        grid[dnx][dny] = '0';
-                    }
-                }
+    void call(vector<vector<char>>& grid, int i, int j, int n, int m) {
+        if (i >= n || j >= m || i < 0 || j < 0) {
+            return;
+        }
+        int dx[4] = {-1, 1, 0, 0};
+        int dy[4] = {0, 0, 1, -1};
+        grid[i][j]='0';
+        for (int k = 0; k < 4; k++) {
+            int nx = i + dx[k], ny = j + dy[k];
+            if (nx >= 0 && nx < n && ny >= 0 && ny < m && grid[nx][ny] == '1') {
+                grid[nx][ny] = '0';
+                call(grid, nx, ny, n, m);
             }
         }
     }
     int numIslands(vector<vector<char>>& grid) {
-        n = grid.size(), m = grid[0].size();
-        int c = 0;
+        int n = grid.size();
+        int m = grid[0].size();
+        int res = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (grid[i][j] == '1') {
-                    call(i, j, grid);
-                    c++;
+                if (grid[i][j]=='1') {
+                    call(grid, i, j, n, m);
+                    res++;
                 }
             }
         }
-        return c;
+        return res;
     }
 };

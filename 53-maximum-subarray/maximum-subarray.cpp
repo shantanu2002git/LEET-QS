@@ -1,16 +1,17 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int n = nums.size(), s = 0, mx = -1e9;
-int elemx=-1e9;
-        for (int i = 0; i < n; i++) {
-            s = s + nums[i];
-            if (s < 0) {
-                s = 0;
-            }
-            mx = max(s, mx);
-            elemx=max(elemx,nums[i]);
+       
+        int maxi = INT_MIN;
+        int sum = 0;
+        for(int i=0;i<nums.size();i++)
+        {
+            sum +=nums[i];
+            maxi = max(sum, maxi);
+            if (sum <0)
+                sum = 0;
+            
         }
-        return mx==0 ? elemx :max(mx,elemx);
+        return maxi;
     }
 };

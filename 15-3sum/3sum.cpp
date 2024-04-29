@@ -1,29 +1,31 @@
-// Optimized Approach - O(n^2 logn + nlogn) - o(n^2 logn) time and O(n) space
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        int target = 0;
         sort(nums.begin(), nums.end());
-        set<vector<int>> s;
-        vector<vector<int>> output;
-        for (int i = 0; i < nums.size(); i++) {
-            int j = i + 1;
-            int k = nums.size() - 1;
+        int n = nums.size();
+        int target = 0;
+        vector<vector<int>> res;
+        set<vector<int>>sit;
+        for (int i = 0; i < n; i++) {
+           
+            int j = i+1, k = n - 1;
             while (j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if (sum == target) {
-                    s.insert({nums[i], nums[j], nums[k]});
-                    j++;
+                int intc = nums[i] + nums[j] + nums[k];
+                if (intc > target) {
                     k--;
-                } else if (sum < target) {
+                } else if (intc < target) {
                     j++;
                 } else {
+                    sit.insert({nums[i], nums[j], nums[k]});
+                    j++;
                     k--;
                 }
             }
         }
-        for (auto triplets : s)
-            output.push_back(triplets);
-        return output;
+
+        for(auto it : sit){
+            res.push_back(it);
+        }
+        return res;
     }
 };

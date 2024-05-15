@@ -1,34 +1,47 @@
+
+
 class Solution {
 public:
-    bool search(vector<vector<char>>& board, int x, int y, string word,
-                int idx) {
-        if (idx == word.size()) {
-            return true;
+    int n, m;
+
+    bool call(int i, int j, vector<vector<char>>& board,
+              vector<vector<int>>& vis, int r, int t, string& s) {
+        if (r == t) {
+            return true; // Word found
         }
-        int n = board.size(), m = board[0].size();
-        if (x < 0 || x >= n || y < 0 || y >= m) {
+        
+        if (i < 0 || j < 0 || i >= n || j >= m || s[r] != board[i][j] ||
+            vis[i][j] == 1) {
             return false;
         }
-        bool res = 0;
-        if (board[x][y] == word[idx]) {
-            board[x][y] = '*';
-            res = search(board, x - 1, y, word, idx + 1) ||
-                  search(board, x + 1, y, word, idx + 1) ||
-                  search(board, x, y + 1, word, idx + 1) ||
-                  search(board, x, y - 1, word, idx + 1);
+        
+        int dx[4] = {-1, 1, 0, 0};
+        int dy[4] = {0, 0, 1, -1};
 
-            board[x][y] = word[idx];
+
+        vis[i][j] = 1;
+
+        for (int l = 0; l < 4; l++) {
+            int nx = dx[l] + i, ny = dy[l] + j;
+            if (call(nx, ny, board, vis, r + 1, t, s)) {
+               // vis[i][j] = 0; // Unmark visited for backtracking
+                return true;
+            }
         }
-        return res;
+        vis[i][j] = 0; // Unmark visited for backtracking
+        return false;
     }
+
     bool exist(vector<vector<char>>& board, string word) {
-        int n = board.size(), m = board[0].size();
+        n = board.size(), m = board[0].size();
+        int t = word.size();
+        bool res = false;
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (board[i][j] == word[0]) {
-                    if (search(board, i, j, word, 0)) {
-                        return true;
-                    }
+                vector<vector<int>> vis(n, vector<int>(m, 0));
+                if (call(i, j, board, vis, 0, t, word)) {
+                    return true;
                 }
             }
         }

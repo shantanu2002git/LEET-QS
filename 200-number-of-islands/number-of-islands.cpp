@@ -6,11 +6,11 @@ public:
         }
         int dx[4] = {-1, 1, 0, 0};
         int dy[4] = {0, 0, 1, -1};
-        grid[i][j]='0';
+        grid[i][j] = '0';
         for (int k = 0; k < 4; k++) {
             int nx = i + dx[k], ny = j + dy[k];
             if (nx >= 0 && nx < n && ny >= 0 && ny < m && grid[nx][ny] == '1') {
-                grid[nx][ny] = '0';
+               // grid[nx][ny] = '0';
                 call(grid, nx, ny, n, m);
             }
         }
@@ -21,7 +21,7 @@ public:
         int res = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (grid[i][j]=='1') {
+                if (grid[i][j] == '1') {
                     call(grid, i, j, n, m);
                     res++;
                 }

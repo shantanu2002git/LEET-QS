@@ -2,6 +2,7 @@ class Solution {
 public:
     int maxScore(vector<int>& cp, int k) {
         int st = 0, j = cp.size() - 1, mx = 0;
+        vector<int>re(j,-1);
         for (int i = 0; i < k; i++) {
             st = st + cp[i];
         }

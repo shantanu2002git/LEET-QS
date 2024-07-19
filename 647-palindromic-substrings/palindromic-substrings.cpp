@@ -1,25 +1,27 @@
 class Solution {
 public:
-    bool validp(string s) {
-        int n = s.size();
-        for (int i = 0; i < n / 2; i++) {
-            if (s[i] != s[n - i - 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     int countSubstrings(string s) {
-        int n = s.size(), c = 0;
+        int res = 0, n = s.size();
         for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                string sub = s.substr(i, j - i + 1); // Adjusting substring generation
-                if (validp(sub)) {
-                    c++;
-                }
+            int cnt = 0, lef = 0, rig = 0;
+            // if odd
+            lef = i, rig = i;
+            while (lef >= 0 && rig < n && s[lef] == s[rig]) {
+                lef--;
+                rig++;
+                cnt++;
             }
+            res = res + cnt;
+        // if evn
+            lef = i, rig = i + 1;
+            cnt = 0;
+            while (lef >= 0 && rig < n && s[lef] == s[rig]) {
+                lef--;
+                rig++;
+                cnt++;
+            }
+            res = res + cnt;
         }
-        return c;
+        return res;
     }
 };

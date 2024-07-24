@@ -1,47 +1,38 @@
-// class Solution
-// {//https://www.geeksforgeeks.org/problems/exit-point-in-a-matrix0905/1
-// public:
-//     int nearestExit(vector<vector<char>>& maze, vector<int>& entrance) {
+#include <vector>
+#include <queue>
 
-//     }
-// };
+using namespace std;
 
 class Solution {
 public:
-    int nearestExit(vector<vector<char>>& maze, vector<int>& entrance) {
-        int n = maze.size();
-        int m = maze[0].size();
-
+    int nearestExit(vector<vector<char>>& maze, vector<int>& ent) {
         queue<pair<int, int>> q;
         int dx[4] = {-1, 0, 0, 1};
         int dy[4] = {0, 1, -1, 0};
+        int n = maze.size(), m = maze[0].size();
+        q.push({ent[0], ent[1]});
+        maze[ent[0]][ent[1]] = '+';
+        int des = 0;
 
-        q.push({entrance[0], entrance[1]});
-        maze[entrance[0]][entrance[1]] = '+';
-        int dist = 0;
         while (!q.empty()) {
-
-            int s = q.size();
-
-            while (s) {
-                int x = q.front().first;
-                int y = q.front().second;
+            int size = q.size();
+            while (size--) {
+                auto it = q.front();
                 q.pop();
-                for (int i = 0; i < 4; i++) {
-                    int row = x + dx[i];
-                    int col = y + dy[i];
-                    if (row >= 0 && col >= 0 && row < n && col < m &&
-                        maze[row][col] == '.') {
-                        if (row == 0 || col == 0 || row == n - 1 ||
-                            col == m - 1)
-                            return dist + 1;
-                        maze[row][col] = '+';
-                        q.push({row, col});
+                int x = it.first, y = it.second;
+                for (int l = 0; l < 4; l++) {
+                    int nx = x + dx[l], ny = y + dy[l];
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < m &&
+                        maze[nx][ny] == '.') {
+                        if (nx == 0 || ny == 0 || nx == n-1 || ny == m-1) {
+                            return des + 1;
+                        }
+                        q.push({nx, ny});
+                        maze[nx][ny] = '+';
                     }
                 }
-                s--;
             }
-            dist++;
+            des++;
         }
         return -1;
     }

@@ -4,16 +4,11 @@ public:
     vector<pair<int, int>> ans;
 
     bool static cmp(const pair<int, int> p1, const pair<int, int> p2) {
-        if (p1.first != p2.first)
-            return p1.first < p2.first;
-
-        return p1.second > p2.second;
+        return p1.first != p2.first ? p1.first < p2.first : p1.second > p2.second;
     }
 
     void dijkstra(int src, int n, int distanceThreshold) {
-        priority_queue<pair<int, int>, vector<pair<int, int>>,
-                       greater<pair<int, int>>>
-            pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>,greater<pair<int, int>>> pq;
         vector<int> distance(n + 1, INT_MAX);
 
         distance[src] = 0;

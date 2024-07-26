@@ -15,3 +15,16 @@ public:
         return ans;
     }
 };
+
+/*
+class Solution {
+public:
+    int minimumLength(string s) {
+        int res=0;
+        unordered_map<char,int> m;
+        for (int i = 0; i < s.size(); i++)m[s[i]]++;
+        for(auto c:m) c.second%2==0?res+=2:res+=1;
+        return res;
+    }
+};
+*/

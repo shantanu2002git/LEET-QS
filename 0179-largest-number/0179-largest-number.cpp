@@ -1,22 +1,20 @@
-
 class Solution {
 public:
-    string largestNumber(vector<int>& arr) {
-        int n = arr.size();
+    string largestNumber(vector<int>& nums) {
         vector<string> si;
-        for (int i = 0; i < n; i++) {
-            si.push_back(to_string(arr[i]));
+        for (auto it : nums) {
+            si.push_back(to_string(it));
         }
         sort(si.begin(), si.end(),
-             [](string a, string b) { return (a + b) > (b + a); });
-        string s = "";
-        for (auto it : si) {
-            s += it;
+             [](string a, string b) { return ((a + b) > (b + a)); });
+
+        string res = "";
+        for (auto i : si) {
+            res = res + i;
         }
-        // Handle the case when the result is "0"
-        if (s[0] == '0') {
+        if (res[0] == '0') {
             return "0";
         }
-        return s;
+        return res;
     }
 };

@@ -1,21 +1,20 @@
 class Solution {
 public:
-    string compressedString(string word) {
-        string comp;
-        int n = word.size(),i=0;
-        
+    string compressedString(string w) {
+        int n = w.size(), i = 0, c = 0;
+        string res = "";
         while (i < n) {
-            char c = word[i];
-            int count = 0;
-            
-            while (i < n && word[i] == c && count < 9) {
-                count++;
+            char ci = w[i];
+            i = i + 1;
+            c = c + 1;
+            while (ci == w[i] && i < n && c <9) {
                 i++;
+                c++;
             }
-          comp.append(to_string(count));
-            comp.push_back(c);
+            res.append(to_string(c));
+            res.push_back(ci);
+            c = 0;
         }
-        
-        return comp;
+        return res;
     }
 };

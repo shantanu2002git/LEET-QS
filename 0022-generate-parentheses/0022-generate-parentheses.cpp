@@ -1,21 +1,21 @@
 class Solution {
 public:
-void cal(int n, int opn, int cls , string st , vector<string>&res){
-    if(opn==n && cls==n)
-    {
-        res.push_back(st);
-        return;
+    vector<string> res;
+    void call(string si, int opn, int cls, int n) {
+        if (opn == n && cls == n) {
+            res.push_back(si);
+            return;
+        }
+
+        if (opn < n) {
+            call(si + '(', opn + 1, cls, n);
+        }
+        if (cls < opn) {
+            call(si + ')', opn, cls + 1, n);
+        }
     }
-    if(opn<n){
-        cal(n,opn+1,cls,st+"(",res);
-    }
-    if(cls<opn){
-        cal(n,opn,cls+1,st+")",res);
-    }
-}
     vector<string> generateParenthesis(int n) {
-        vector<string>res;
-        cal(n,0,0,"",res);
+        call("", 0, 0,n );
         return res;
     }
 };

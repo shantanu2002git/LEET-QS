@@ -1,46 +1,39 @@
-
-
 class Solution {
 public:
-    int n, m;
-
-    bool call(int i, int j, vector<vector<char>>& board,
-              vector<vector<int>>& vis, int r, int t, string& s) {
-        if (r == t) {
-            return true; // Word found
-        }
-        
-        if (i < 0 || j < 0 || i >= n || j >= m || s[r] != board[i][j] ||
-            vis[i][j] == 1) {
+    bool isHave(int i, int j, int l, vector<vector<char>>& board, string& word,
+                vector<vector<int>>& vis) {
+        int n = board.size(), m = board[0].size();
+        if (i < 0 || j < 0 || i >= n || j >= m || vis[i][j] == 1 ||
+            board[i][j] != word[l]) {
             return false;
         }
-        
-        int dx[4] = {-1, 1, 0, 0};
-        int dy[4] = {0, 0, 1, -1};
-
-
+        if (l == word.size() - 1) {
+            return true;
+        }
         vis[i][j] = 1;
-
-        for (int l = 0; l < 4; l++) {
-            int nx = dx[l] + i, ny = dy[l] + j;
-            if (call(nx, ny, board, vis, r + 1, t, s)) {
-               // vis[i][j] = 0; // Unmark visited for backtracking
+        int dx[4] = {-1, 1, 0, 0};
+        int dy[4] = {0, 0, -1, 1};
+        for (int c = 0; c < 4; c++) {
+            int nx = i + dx[c], ny = j + dy[c];
+            if (isHave(nx, ny, l + 1, board, word, vis)) {
                 return true;
             }
         }
-        vis[i][j] = 0; // Unmark visited for backtracking
+
+        // Backtrack: unmark the current cell
+        vis[i][j] = 0;
         return false;
     }
 
     bool exist(vector<vector<char>>& board, string word) {
-        n = board.size(), m = board[0].size();
-        int t = word.size();
-        bool res = false;
+        int n = board.size(), m = board[0].size();
+        vector<vector<int>> vis(n, vector<int>(m, 0));
 
+        // Start DFS from every cell
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                vector<vector<int>> vis(n, vector<int>(m, 0));
-                if (call(i, j, board, vis, 0, t, word)) {
+                if (board[i][j] == word[0] &&
+                    isHave(i, j, 0, board, word, vis)) {
                     return true;
                 }
             }

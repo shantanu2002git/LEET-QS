@@ -10,9 +10,12 @@ public:
                 for (auto i : rw) {
                     pattn = pattn + to_string(i);
                 }
+
+                /*on this we consider the '0' is accepted one at mtx[0][0]*/
             } else {
                 for (auto j : rw) {
                     pattn = pattn + to_string(j^1);
+                    /*if the mtx[0][0]==1 then flip the bits of this row*/
                 }
             }
             mps[pattn]++;

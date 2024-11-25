@@ -1,23 +1,29 @@
 class Solution {
 public:
     vector<int> applyOperations(vector<int>& nums) {
-        int n = nums.size(), ls = 0;
-        vector<int> res(n, 0);
+        int n = nums.size();
+        
+       
         for (int i = 0; i < n - 1; i++) {
             if (nums[i] == nums[i + 1]) {
-                nums[i] = nums[i] * 2;
-                nums[i + 1] = -1;
-            } else if (nums[i] == 0) {
-                nums[i] = -1;
+                nums[i] *= 2;
+                nums[i + 1] = 0;
             }
         }
-        int i = 0;
-        for (auto it : nums) {
-            if (it == -1) {
-                continue;
+        
+        
+        int pos = 0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != 0) {
+                nums[pos++] = nums[i];
             }
-            res[i++] = it;
         }
-        return res;
+        
+       
+        for (int i = pos; i < n; i++) {
+            nums[i] = 0;
+        }
+
+        return nums;
     }
 };

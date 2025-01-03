@@ -2,16 +2,16 @@ class Solution {
 public:
     int waysToSplitArray(vector<int>& nums) {
         int n = nums.size();
-        vector<int> pref(n, 0);
-        vector<int> suf(n, 0);
-        int sum = reduce(nums.begin(), nums.end(), 0);
+        vector<long long> pref(n, 0);
+     
+        long long sum = accumulate(nums.begin(), nums.end(), 0LL); // Use 0LL to ensure the sum is long long
         pref[0] = nums[0];
-        int res = 0;
+        long long res = 0;
         for (int i = 1; i < n; i++) {
+            pref[i] = pref[i - 1] + nums[i];
             if (pref[i - 1] >= (sum - pref[i - 1])) {
                 res++;
             }
-            pref[i] = pref[i - 1] + nums[i];
         }
 
         return res;

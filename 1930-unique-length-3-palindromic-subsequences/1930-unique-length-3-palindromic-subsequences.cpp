@@ -1,38 +1,31 @@
-class Solution
-{
+class Solution {
 public:
-    int countPalindromicSubsequence(string s)
-    {
-        // cout<<(int) 'a';//97
-
+    int countPalindromicSubsequence(string s) {
         int n = s.size();
-        vector<int> count(27, 0);
-        map<char, int> index;
-        int res = 0,si3=0;
+        vector<int> first(26, -1), last(26, -1);
+        unordered_set<string> unique_palindromes;
 
-        for (int i = 0; i < n; i++)
-        {
-            int ci = s[i] - 97;
-            if (count[ci] == 0)
-            {
-                index.insert({s[i], i});
+        // Record the first and last occurrence of each character
+        for (int i = 0; i < n; i++) {
+            if (first[s[i] - 'a'] == -1) {
+                first[s[i] - 'a'] = i;
             }
-            count[ci]++;
-        
-            if (count[ci] >= 2)
-            {
-               
-                int lens = (i - index[s[i]]) + 1;
-                res = res + (abs(lens - count[ci]));
-
-                cout<<s[i]<<" "<<lens<<" "<<abs(lens - count[ci])<<" "<<res<<endl;
-                index.erase(s[i]);
-                index.insert({s[i], i});
-                count[ci]--;
-            }
-            // cout << ci << " ";
+            last[s[i] - 'a'] = i;
         }
 
-        return res;
+        // Check for palindromic subsequences
+        for (int i = 0; i < 26; i++) {
+            if (first[i] != -1 && last[i] != -1 && first[i] != last[i]) {
+                unordered_set<char> middle_chars;
+                for (int j = first[i] + 1; j < last[i]; j++) {
+                    middle_chars.insert(s[j]);
+                }
+                for (char c : middle_chars) {
+                    unique_palindromes.insert(string(1, 'a' + i) + c + string(1, 'a' + i));
+                }
+            }
+        }
+
+        return unique_palindromes.size();
     }
 };

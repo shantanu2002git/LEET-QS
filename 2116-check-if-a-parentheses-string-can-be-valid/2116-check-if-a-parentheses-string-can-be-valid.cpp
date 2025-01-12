@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canBeValid(string s, string locked) {
-        int open = 0, clos = 0, canflip = 0, isblance = 0;
+        int open = 0, clos = 0, canflip = 0, isblance;
         int n = s.size();
         if (n % 2 != 0) {
             return false;
@@ -28,7 +28,7 @@ public:
             } else if (s[i] == ')') {
                 clos++;
             }
-            isblance = clos - open;
+            isblance =  open-clos;
             if (canflip < isblance) {
                 return false;
             }

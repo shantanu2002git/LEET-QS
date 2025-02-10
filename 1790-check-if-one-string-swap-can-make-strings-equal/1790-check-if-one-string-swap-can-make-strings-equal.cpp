@@ -10,7 +10,13 @@ public:
                 c++;
             }
         }
-        // sort()
+        /*
+        caa
+        aaz
+         sort(s1.begin(),s1.end());
+        sort(s2.begin(),s2.end());
+        */
+       
         for(int i=0; i<n; i++){
             if(ms1[s1[i]]!=ms2[s1[i]]){
                 return 0;

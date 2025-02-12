@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         int res = 0;
         map<int, int> mps;
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
         /*
         why we need the sorting think again : 63 = 9, 36 =9 : how do ?
         you update map with 'mp[sum]=number'
@@ -18,7 +18,7 @@ public:
             if(mps.find(ds)!=mps.end()){
                 res=max(res,(mps[ds]+it) );
             }
-            mps[ds]=it;
+            mps[ds]=max(it,mps[ds]);
         }
         return res==0 ? -1 : res;
     }

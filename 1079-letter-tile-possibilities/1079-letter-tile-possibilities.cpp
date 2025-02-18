@@ -1,39 +1,26 @@
 class Solution {
 public:
-    int numTilePossibilities(string tiles) {
-        vector<int> count(26, 0);
-        for (char tile : tiles) {
-            count[tile - 'A']++;
-        }
-        return dfs(count);
-    }
+    set<string> unq;
+    void call(string tiles, string si, int idx, int n, vector<bool>&visit) {
+        // if(idx>=n) return;
 
-private:
-    int dfs(vector<int>& count) {
-        int sum = 0;
-        for (int i = 0; i < 26; ++i) {
-            if (count[i] == 0) continue;
-            sum++;
-            count[i]--;
-            sum += dfs(count);
-            count[i]++;
+        unq.insert(si);
+        for (int idx = 0; idx < n; idx++) {
+            if (visit[idx] == 0) {
+                si = si + tiles[idx];
+                visit[idx] = true;
+                call(tiles, si, 0, n, visit);
+                si.pop_back();
+                visit[idx] = false;
+            }
         }
-        return sum;
+    }
+    int numTilePossibilities(string tiles) {
+        string si = "";
+        int n = tiles.size();
+        vector<bool> visit(n, 0);
+
+        call(tiles, si, 0, n, visit);
+        return unq.size()-1;
     }
 };
-
-
-
-/*
-abc
-a b c ab bc abc : ba cb cba : 
-
-[abc]
-acb
-[cba]
-bac
-bca
-cab
-
-
-(2*(n*(n+1)/2)-n)-n!-2 */

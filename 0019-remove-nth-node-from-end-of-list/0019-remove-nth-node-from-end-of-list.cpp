@@ -19,16 +19,18 @@ public:
         return res;
     }
     ListNode* removeNthFromEnd(ListNode* head, int k) {
+
         ListNode* cnd = head;
         int n = countnode(cnd);
-         if (k == n) return head->next;
-        int stk = n - k- 1;
+        if (k == n)
+            return head->next;
+        int stk = n - k - 1; // stop before prevoius node
         auto it = head;
         while (stk > 0) {
             it = it->next;
             stk--;
         }
-        it->next = it->next->next;
+        it->next = it->next->next; // skip k th node
 
         return head;
     }

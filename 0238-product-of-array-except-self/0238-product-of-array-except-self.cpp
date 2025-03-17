@@ -1,34 +1,32 @@
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
-        map<int, int> mp;
-        long long mul = 1;
-        for (auto it : nums) {
-            mp[it]++;
-            if (it == 0)
-                continue;
-            mul = mul * it;
+        int n=nums.size();
+        vector<int>vc(n,0);
+        bool fl=0;
+        int mul=1,zr=0;
+        for(int i=0; i<n;i++){
+        if(nums[i]!=0){
+            mul=mul*nums[i];
+        }else if(nums[i]==0){
+            zr++;
+            fl=1;
         }
-        int n = nums.size();
-        vector<int> res(n, 0);
-        if (mp[0] >= 2) {
-            return res;
         }
-
-        cout << (mul) << " ";
-        for (int i = 0; i < n; i++) {
-
-            if (mp[0] == 1) {
-                if (nums[i] == 0) {
-                    res[i] = (mul);
-                    continue;
-                }
-
-                res[i] = 0;
-            } else {
-                 res[i] = mul/nums[i];
-            }
+        if(zr>1){
+            return vc;
         }
-        return res;
+        else  if(zr){
+        for(int i=0; i<n; i++){
+            if(nums[i]==0 )
+               vc[i]=(mul);
+        }
+        }else{
+          for(int i=0; i<n; i++){
+           
+               vc[i]=(mul/nums[i]);
+        }
+        }
+        return vc;
     }
 };

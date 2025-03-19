@@ -13,6 +13,7 @@ public:
                 j++;
             }else{
                 res++;
+                s[j]=0;
                 i++;
             }
         }

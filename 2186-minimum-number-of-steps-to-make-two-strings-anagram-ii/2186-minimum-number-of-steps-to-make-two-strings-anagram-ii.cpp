@@ -1,27 +1,27 @@
 class Solution {
 public:
     int minSteps(string s, string t) {
-        map<char,int>mps,mpt;
-        for(int i : s){
+        map<char, int> mps;
+        for (int i : s) {
             mps[i]++;
         }
-        for(int j : t){
-            mpt[j]++;
-        }
-        int res=0;
-        for(auto it : mps){
-            if(mpt.find(it.first)==mpt.end()){
-                res=res+it.second;
-            }else{
-                res=res+abs(mpt[it.first]-it.second);
+        int res = 0;
+        for (int j : t) {
+
+            if (mps.find(j) != mps.end()) {
+                mps[j]--;
+                if (mps[j] == 0) {
+                    mps.erase(j);
+                }
+            } else {
+                res++;
             }
         }
 
-        for(auto it : mpt){
-            if(mps.find(it.first)==mps.end()){
-                res=res+it.second;
-            }
+        for (auto it : mps) {
+            res = res + it.second;
         }
+
         return res;
     }
 };

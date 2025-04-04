@@ -1,22 +1,19 @@
-bool cmp(vector<int>&a, vector<int>&b){
-    return a[1]<b[1];
-}
 class Solution {
 public:
-    int eraseOverlapIntervals(vector<vector<int>>& intv) {
-        sort(intv.begin(),intv.end(),cmp);
-        int mx=-1e9,c=0;
-        for(auto it : intv)
-        {
-int x=it[0];
-int y=it[1];
-if(x>=mx){
-    mx=y;
-}else{
-    c++;
-}
-        }
-        return c;
+    int eraseOverlapIntervals(vector<vector<int>>& inv) {
+        sort(inv.begin(), inv.end(), [&](vector<int>& a, vector<int>& b) {
+            return (a[1] < b[1]);
+        }); int resmove = 0;
+        int mx = inv[0][1];
+        for (int i = 1; i < inv.size(); i++) {
+            if (mx > inv[i][0]) {
+                resmove++;
 
+            } else {
+                mx = max(mx, inv[i][1]);
+            }
+        }
+
+        return resmove;
     }
 };

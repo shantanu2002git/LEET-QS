@@ -1,35 +1,31 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
-        map<char, int> mp;
-        priority_queue<pair<int, char>> pq;
-        for (auto i : tasks) {
-            mp[i]++;
-        }
-        for (auto it : mp) {
-            pq.push({it.second, it.first});
-        }
-        int res = 0;
+        unordered_map<char, int> freq;
+        for (char task : tasks) freq[task]++;
+
+        priority_queue<int> pq;
+        for (auto [ch, count] : freq) pq.push(count);
+
+        int time = 0;
         while (!pq.empty()) {
+            vector<int> temp;
+            int cycle = n + 1;
 
-            vector<pair<int, char>> keep;
-            int time = n;
-            while (time--) {
-                if (!pq.empty()) {
-                    auto [fq, ci] = pq.top();
-                    if (fq >= 1) {
-                        keep.push_back({fq - 1, ci});
-                    }
-
-                    pq.pop();
-                }
-
-                res++;
+            // Process up to (n + 1) tasks in a cycle
+            while (cycle-- && !pq.empty()) {
+                int cnt = pq.top(); pq.pop();
+                if (--cnt > 0) temp.push_back(cnt);
+                time++;
             }
-            for(auto it : keep){
-                pq.push({it.first, it.second});
-            }
+
+            // Push remaining back to heap
+            for (int cnt : temp) pq.push(cnt);
+
+            // If tasks left, we were idle
+            if (!pq.empty()) time += cycle + 1;
         }
-        return res;
+
+        return time;
     }
 };

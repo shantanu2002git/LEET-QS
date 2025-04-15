@@ -11,21 +11,26 @@
  */
 class Solution {
 public:
-bool ans=1;
-int cal(TreeNode* root){
-    if(root==NULL) return 0;
-    if(ans==0) return 0;
+int call(TreeNode* root){
+    if(root==NULL){
+        return 0;
+    }
+    int left = call(root->left);
+        if (left == -1) return -1;  // left subtree not balanced
 
-    int lefhi=cal(root->left);
-    int righi=cal(root->right);
-   if(abs(lefhi-righi)>1){
-    ans=0;
-     }
-    return max(lefhi,righi)+1;
+        int right = call(root->right);
+        if (right == -1) return -1; // right subtree not balanced
+
+    if(abs(left-right)>1){
+        return -1;
+    }
+
+    return max(left, right)+1;
 }
     bool isBalanced(TreeNode* root) {
-      
-      cal(root);
-        return  ans;
+        if(root==NULL){
+            return 1;
+        }
+        return call(root)!=-1;
     }
 };

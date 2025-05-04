@@ -1,40 +1,28 @@
-vector<int> nextGreaterElement(vector<int> &nums2)
-{
-  stack<int> st;
-  int n = nums2.size();
-  vector<int> res;
-  for (int i = n - 1; i >= 0; i--)
-  {
-    while (!st.empty() && st.top() <= nums2[i])
-    {
-      st.pop();
-    }
-    if (st.empty())
-    {
-      res.push_back(-1);
-    }
-    else
-    {
-      res.push_back(st.top());
-    }
-    st.push(nums2[i]);
-  }
-  reverse(res.begin(), res.end());
-  res.erase(res.begin()+n/2, res.end());
-  return res;
-}
-class Solution
-{
+class Solution {
 public:
-  vector<int> nextGreaterElements(vector<int> &nums)
-  {
-    vector<int> nw = nums;
-    int n = nums.size();
-    for (int i = 0; i < n; i++)
-    {
-      nw.push_back(nums[i]);
-    }
+    vector<int> nextGreaterElements(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> res(n, -1);  // Initialize result with -1
+        stack<int> st;
 
-    return nextGreaterElement(nw);
-  }
+        // Simulate circular traversal: from 2n - 1 to 0
+        for (int i = 2 * n - 1; i >= 0; i--) {
+            int idx = i % n;
+
+            // Pop all smaller or equal elements
+            while (!st.empty() && st.top() <= nums[idx]) {
+                st.pop();
+            }
+
+            if (i < n) { // Only fill result in the first pass
+                if (!st.empty()) {
+                    res[idx] = st.top();
+                }
+            }
+
+            st.push(nums[idx]); // Push current element for future comparisons
+        }
+
+        return res;
+    }
 };

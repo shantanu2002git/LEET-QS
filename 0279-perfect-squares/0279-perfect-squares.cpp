@@ -1,24 +1,39 @@
 class Solution {
 public:
-    int caldp(int idx, int n, vector<int>&dp){
-        if(n==0){
+    int call(int l, int n) {
+        if (n == 0) {
             return 0;
         }
-        if(idx*idx>n || n<0){
+        if (l * l > n || n < 0) {
             return 1e9;
         }
-        if(dp[n]!=-1){
-            return dp[n];
+        int tt, nn;
+        if (l * l <= n) {
+            tt = 1 + call(l, n - (l * l));
         }
-        int ttk,ntt;
-        if(idx*idx<=n){
-            ttk=1+caldp(idx,n-(idx*idx),dp);  
-        }
-        ntt=caldp(idx+1,n,dp);
-        return dp[n]=min(ttk,ntt);
+        nn = call(l + 1, n);
+        return min(tt, nn);
     }
     int numSquares(int n) {
-        vector<int>dp(n+1,-1);
-        return caldp(1,n,dp); 
+
+        // return call(1, n);
+
+        vector<int>dp(n + 1, INT_MAX);
+        dp[0] = 0;
+        vector<int> sqqr;
+        for(int it=1; it*it<=n; it++){
+            sqqr.push_back(it*it);
+        }
+
+
+        for (int i = 1; i <= n; i++) {
+            for (int sq : sqqr) {
+                if (sq > i)
+                    break;
+                dp[i] = min(dp[i], 1 + dp[i - sq]);
+            }
+        }
+        
+        return dp[n];
     }
 };

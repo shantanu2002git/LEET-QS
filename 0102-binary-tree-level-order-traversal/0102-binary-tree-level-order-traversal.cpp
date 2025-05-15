@@ -15,23 +15,25 @@ public:
         if(root==NULL){
             return {};
         }
-        vector<vector<int>>res;
         queue<TreeNode*>q;
+        vector<vector<int>>res;
         q.push(root);
-        TreeNode* fnt;
         while(!q.empty()){
-            int n=q.size();
             vector<int>in;
+            int n=q.size();
             for(int i=0; i<n; i++){
-               fnt=q.front();
-                q.pop();
-                in.push_back(fnt->val);
-                if(fnt->left) q.push(fnt->left);
-                if(fnt->right) q.push(fnt->right);
-
+                auto it =q.front(); q.pop();
+                in.push_back(it->val);
+                if(it->left){
+                    q.push(it->left);
+                }
+                if(it->right){
+                    q.push(it->right);
+                }
             }
             res.push_back(in);
         }
         return res;
+
     }
 };

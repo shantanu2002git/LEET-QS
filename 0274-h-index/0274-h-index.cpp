@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool call(int ele, vector<int>& cit) {
-        int i = 0, j = cit.size() - 1;
+        int n=cit.size(), i = 0, j = n - 1;
 
         while (i <= j) {
             int md = (i + j) / 2;
@@ -12,7 +12,7 @@ public:
             }
         }
 
-        return (cit.size() - i >= ele);
+        return (n - i >= ele);
     }
 
     int hIndex(vector<int>& cit) {
@@ -21,6 +21,8 @@ public:
         for (int i = 1; i <= n; i++) {
             if (call(i, cit)) {
                 res = i;
+            }else{
+                break;
             }
         }
         return res;

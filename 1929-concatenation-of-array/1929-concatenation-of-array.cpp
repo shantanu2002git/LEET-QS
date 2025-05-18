@@ -16,6 +16,280 @@ public:
 
     }
 };
+/*
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WSP ChatBot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .chat-container {
+      max-width: 720px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 127, 0.2);
+    }
+
+    .chat-box {
+      max-height: 500px;
+      overflow-y: auto;
+      padding: 15px;
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user .bubble {
+      margin-left: auto;
+      background-color: #238636;
+      color: white;
+    }
+
+    .bot .bubble {
+      background-color: #21262d;
+      color: #c9d1d9;
+    }
+
+    .bubble {
+      padding: 10px 15px;
+      border-radius: 16px;
+      max-width: 75%;
+      white-space: pre-wrap;
+      cursor: text;
+    }
+
+    .form-group input {
+      background-color: #161b22;
+      color: white;
+      border: 1px solid #30363d;
+    }
+
+    .btn-custom {
+      background-color: #238636;
+      border: none;
+      color: white;
+    }
+
+    .btn-custom:hover {
+      background-color: #2ea043;
+    }
+    .retry-icon {
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-top: -5px;
+        color: #999;
+      }
+    
+      .retry-icon:hover {
+        color: #2ea043;
+      }
+    
+      .download-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    
+      .download-btns button {
+        width: 49%;
+      }
+    #askSelected {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container chat-container">
+    <h2>\U0001f9e0 WSP ChatBot</h2>
+    <div class="chat-box" id="response"></div>
+
+    <div id="askSelected" class="text-center">
+      <button class="btn btn-sm btn-outline-info" onclick="askAboutSelection()">✏️ Ask About This</button>
+    </div>
+    <div class="download-btns">
+        <button class="btn btn-sm btn-outline-light" onclick="downloadChat('txt')">Download TXT</button>
+        <button class="btn btn-sm btn-outline-light" onclick="downloadChat('pdf')">Download PDF</button>
+      </div>
+      
+    <div class="form-group">
+      <input type="text" class="form-control" id="userInput" placeholder="Ask me anything..." />
+    </div>
+    <button id="sendBtn" class="btn btn-custom btn-block" onclick="handleButtonClick()">Send</button>
+  </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    let controller = null;
+    let isLoading = false;
+  
+    async function handleButtonClick() {
+      if (isLoading) {
+        controller?.abort();
+        setSendButtonState(false);
+        return;
+      }
+      await sendMessage();
+    }
+  
+    function setSendButtonState(loading) {
+      isLoading = loading;
+      document.getElementById('sendBtn').textContent = loading ? 'Stop' : 'Send';
+    }
+  
+    async function sendMessage(textOverride = null, retryEl = null) {
+      const input = document.getElementById('userInput');
+      const userText = textOverride || input.value.trim();
+      const responseDiv = document.getElementById('response');
+      if (!userText) return;
+  
+      if (!textOverride) {
+        // Only add user message if not retry
+        const userMessage = document.createElement('div');
+        userMessage.className = 'message user';
+        userMessage.innerHTML = `<div class="bubble">${userText}</div>`;
+        responseDiv.appendChild(userMessage);
+      }
+  
+      // Remove retry icon if exists
+      if (retryEl) retryEl.remove();
+  
+      // Bot thinking placeholder
+      const botMessage = document.createElement('div');
+      botMessage.className = 'message bot';
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = 'Typing...';
+      botMessage.appendChild(bubble);
+      responseDiv.appendChild(botMessage);
+      responseDiv.scrollTop = responseDiv.scrollHeight;
+  
+      try {
+        setSendButtonState(true);
+        controller = new AbortController();
+  
+        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+          method: 'POST',
+          signal: controller.signal,
+          headers: {
+            Authorization: 'Bearer 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',
+            'HTTP-Referer': 'https://www.sitename.com',
+            'X-Title': 'SiteName',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: 'deepseek/deepseek-r1:free',
+            messages: [{ role: 'user', content: userText }],
+          }),
+        });
+  
+        const data = await response.json();
+        const botReply = data.choices?.[0]?.message?.content;
+  
+        if (botReply) {
+          bubble.innerHTML = marked.parse(botReply);
+        } else {
+          throw new Error("No response");
+        }
+  
+        setSendButtonState(false);
+      } catch (err) {
+        bubble.textContent = '⚠️ Failed to get response.';
+  
+        // Add Retry Icon
+        const retryIcon = document.createElement('div');
+        retryIcon.className = 'retry-icon';
+        retryIcon.innerHTML = '\U0001f501 Retry';
+        retryIcon.onclick = () => sendMessage(userText, retryIcon);
+  
+        // Attach retry icon to user message
+        const lastUserMsg = [...document.querySelectorAll('.message.user')].pop();
+        lastUserMsg?.appendChild(retryIcon);
+  
+        setSendButtonState(false);
+      }
+  
+      controller = null;
+      responseDiv.scrollTop = responseDiv.scrollHeight;
+    }
+  
+    function downloadChat(format) {
+      const messages = document.querySelectorAll('.message');
+      let content = '';
+  
+      messages.forEach((msg, i) => {
+        const isUser = msg.classList.contains('user');
+        const role = isUser ? 'You' : 'Bot';
+        const text = msg.innerText.replace('\U0001f501 Retry', '').trim();
+        content += `${role}:\n${text}\n\n`;
+      });
+  
+      if (format === 'txt') {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'chat_history.txt';
+        link.click();
+      } else if (format === 'pdf') {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+        pdf.setFont('Courier');
+        const lines = pdf.splitTextToSize(content, 180);
+        pdf.text(lines, 10, 10);
+        pdf.save('chat_history.pdf');
+      }
+    }
+  
+    // Track text selection
+    document.addEventListener('mouseup', () => {
+      const selectedText = window.getSelection().toString().trim();
+      const askBtn = document.getElementById('askSelected');
+      askBtn.style.display = selectedText ? 'block' : 'none';
+    });
+  
+    function askAboutSelection() {
+      const selectedText = window.getSelection().toString().trim();
+      if (selectedText) {
+        document.getElementById('userInput').value = `Explain more about: "${selectedText}"`;
+        document.getElementById('askSelected').style.display = 'none';
+        sendMessage();
+      }
+    }
+  </script>
+  
+
+</body>
+</html>
+
+
+*/
+
 
 /*
 #include <iostream>

@@ -1,29 +1,22 @@
-#include <vector>
-#include <algorithm> // for std::sort
-using namespace std;
-
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        int cn = 1, mx = 1, n = nums.size();
-
-        if (n == 0) return 0;
-
-        sort(nums.begin(), nums.end());
-
-        for (int i = 1; i < n; i++) {
-            if (nums[i - 1] == nums[i]) {
-                continue;
-            }
-                if (nums[i] == nums[i - 1] + 1) {
-                    cn++;
-                } else {
-                    mx = max(mx, cn);
-                    cn = 1;
-                }
-            
+        map<int, int> mp;
+        for (auto it : nums) {
+            mp[it]++;
         }
-
-        return max(mx, cn);
+        int prv = 1e9, rs = 0, mxi=0;
+        for (auto it : mp) {
+            cout<<prv<<" "<<it.first<<endl;
+            if(prv==it.first) continue;
+            if (prv + 1 == it.first ) {
+                rs++;
+            }else{
+                rs=1;
+            }
+            prv = it.first;
+            mxi=max(mxi,rs);
+        }
+        return mxi;
     }
 };

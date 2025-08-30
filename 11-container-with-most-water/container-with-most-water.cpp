@@ -1,18 +1,18 @@
 class Solution {
 public:
-    int maxArea(vector<int>& height) {
-        int i=0,n=height.size(),j=n-1,mx=-1;
-        while(i<=j){
-          int hi=min(height[i],height[j]);
-          int dis=(j-i);
-          int water=hi*dis;
-          mx=max(mx,water);
-          if(height[i]<height[j]){
-            i++;
-          }else{
-            j--;
-          }
+    int maxArea(vector<int>& h) {
+        int n = h.size();
+        int l = 0, r = n - 1, res = 0;
+        while (l < r) {
+            int wd = (r - l );
+            res = max(res, min(h[l], h[r]) * wd);
+            cout << wd << " ";
+            if (h[l] <= h[r]) {
+                l++;
+            } else {
+                r--;
+            }
         }
-        return mx;
+        return res;
     }
 };

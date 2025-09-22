@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
-        sort(trips.begin(), trips.end(),
-             [](vector<int>& a, vector<int>& b) { return a[1] < b[1]; });
+        // sort(trips.begin(), trips.end(),
+        //      [](vector<int>& a, vector<int>& b) { return a[1] < b[1]; });
 
         vector<int> vis(1001, 0);
         for (auto it : trips) {

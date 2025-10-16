@@ -1,34 +1,32 @@
 class Solution {
 public:
     int maxIncreasingSubarrays(vector<int>& nums) {
-        int n = nums.size();
-        if (n == 0) return 0;
+      int inc=1,n=nums.size();
+     vector<int>ins;
+      for(int i=1; i<n; i++){
+         if(nums[i-1]<nums[i]){
+            inc++;
+         }
+         else{
+            ins.push_back(inc);
+            // cout<<inc<<" ";
+            inc=1;
+         }
+      }
+ins.push_back(inc);
+int res=0;
 
-        int prevLen = 0;  // length of previous increasing subarray
-        int curLen = 1;   // current increasing streak length
-        int res = 0;
+for(auto it : ins){
+    cout<<it<<" ";
+}
+      cout<<endl;
 
-        for (int i = 1; i < n; ++i) {
-            if (nums[i] > nums[i - 1]) {
-                curLen++;
-            } else {
-                // when sequence breaks, compare with previous streak
-                if (prevLen > 0) {
-                    res = max(res, max(max(prevLen, curLen) / 2, min(prevLen, curLen)));
-                }
-                prevLen = curLen;
-                curLen = 1; // reset
-            }
-        }
-
-        // handle last streak
-        if (prevLen > 0) {
-            res = max(res, max(max(prevLen, curLen) / 2, min(prevLen, curLen)));
-        }
-
-        // special case: only one increasing sequence (no break)
-        if (prevLen == 0) return curLen / 2;
-
-        return res;
+for(int i=0; i<ins.size()-1; i++){
+    int a=ins[i],b=ins[i+1];
+ res=max(res,max((max(a,b))/2, min(a,b)));
+    cout<<ins[i]<<" "<<ins[i+1]<<endl;
+}
+  
+      return (ins.size()==1) ? ins[0]/2 : res;
     }
 };

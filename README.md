@@ -32,3 +32,15 @@ You can clone this repository and navigate to the specific problem directory to 
 
 
 THANKS...
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
+## Math
+|  |
+| ------- |
+| [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
+<!---LeetCode Topics End-->

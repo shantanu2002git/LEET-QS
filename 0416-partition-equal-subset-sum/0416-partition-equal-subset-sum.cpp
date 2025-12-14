@@ -1,44 +1,31 @@
 class Solution {
 public:
-    bool call(int idx, int n, int s, vector<int>& nums) {
-        if (idx >= n) {
-            return (s == 0);
+    bool call(int idx, int n, int s, vector<int>& nums,
+              vector<vector<int>>& dp) {
+        if (idx == n - 1) {
+            return s == nums[idx];
         }
-
-        int tt = 0, nn = 0;
-
-        if (s >= nums[idx]) {
-            tt = call(idx + 1, n, s - nums[idx], nums);
+        if (s == 0) {
+            return 1;
         }
-        nn = call(idx + 1, n, s, nums);
-
-        return (tt || nn);
+     
+        int nn = 0, tt = 0;
+        if (dp[idx][s] != -1) {
+            return dp[idx][s];
+        }
+        if (nums[idx] <= s) {
+            tt = call(idx + 1, n, s - nums[idx], nums, dp);
+        }
+        nn = call(idx + 1, n, s, nums, dp);
+        return dp[idx][s] = tt || nn;
     }
     bool canPartition(vector<int>& nums) {
-        int total = accumulate(nums.begin(), nums.end(), 0);
-        if (total % 2 != 0) {
+        int sum = accumulate(nums.begin(), nums.end(), 0);
+        if (sum % 2 != 0) {
             return 0;
         }
-        int targetSum = total / 2;
-        int n = nums.size();
-
-        // return call(0, n, targetSum, nums);
-
-        vector<vector<int>> dp(n + 1, vector<int>(targetSum + 1, 0));
-
-        for (int i = 0; i <= n; i++) {
-            dp[i][0] = 1;
-        }
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= targetSum; j++) {
-                if (nums[i-1] <= j) {
-                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
-                } else {
-                    dp[i][j] = dp[i - 1][j];
-                }
-            }
-        }
-
-        return dp[n][targetSum];
+        int target = sum /2, n = nums.size();
+        vector<vector<int>> dp(n, vector<int>(target + 1, -1));
+        return call(0, n, target, nums, dp);
     }
 };

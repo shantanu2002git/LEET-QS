@@ -38,9 +38,14 @@ THANKS...
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0001-two-sum) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
 ## Math
 |  |
 | ------- |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->

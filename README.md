@@ -40,6 +40,7 @@ THANKS...
 | ------- |
 | [0001-two-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0001-two-sum) |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
+| [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
 ## Math
@@ -62,5 +63,18 @@ THANKS...
 ## Ordered Set
 |  |
 | ------- |
+| [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
+## Binary Search
+|  |
+| ------- |
+| [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
+## Stack
+|  |
+| ------- |
+| [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 <!---LeetCode Topics End-->

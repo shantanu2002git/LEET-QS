@@ -56,6 +56,7 @@ THANKS...
 |  |
 | ------- |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
+| [0712-minimum-ascii-delete-sum-for-two-strings](https://github.com/shantanu2002git/LEET-QS/tree/master/0712-minimum-ascii-delete-sum-for-two-strings) |
 | [1143-longest-common-subsequence](https://github.com/shantanu2002git/LEET-QS/tree/master/1143-longest-common-subsequence) |
 ## Sorting
 |  |
@@ -81,5 +82,6 @@ THANKS...
 ## String
 |  |
 | ------- |
+| [0712-minimum-ascii-delete-sum-for-two-strings](https://github.com/shantanu2002git/LEET-QS/tree/master/0712-minimum-ascii-delete-sum-for-two-strings) |
 | [1143-longest-common-subsequence](https://github.com/shantanu2002git/LEET-QS/tree/master/1143-longest-common-subsequence) |
 <!---LeetCode Topics End-->

@@ -1,22 +1,33 @@
 class Solution {
 public:
-    int call(string &text1, string &text2,int m,int n,vector<vector<int>>&dp) {
-        if(m==0 || n==0){
+    int call(string t1, string t2, int i, int j) {
+        if (i < 0 || j < 0) {
             return 0;
         }
-        if(dp[m][n]!=-1){
-            return dp[m][n];
+        long long tt = 0, nn = 0;
+        if (t1[i] == t2[j]) {
+            return 1 + call(t1, t2, i - 1, j - 1);
+        } else {
+            return max(call(t1, t2, i - 1, j), call(t1, t2, i, j - 1));
         }
-        if(text1[m-1]==text2[n-1]){
-            return dp[m][n]= 1+call(text1,text2,m-1,n-1,dp);
-        }else{
-            return dp[m][n]= max(call(text1,text2,m-1,n,dp),call(text1,text2,m,n-1,dp));
-        }
+
+        return (tt, nn);
     }
-    
-    int longestCommonSubsequence(string text1, string text2) {
-        int m=text1.size(),n=text2.size();
-        vector<vector<int>>dp(1001,(vector<int>(1001,-1)));
-        return call(text1,text2,m,n,dp);
+    int longestCommonSubsequence(string t1, string t2) {
+        int n = t1.size(), m = t2.size();
+        // return call(t1, t2, n - 1, m - 1);
+        vector<vector<int>>dp(n+1, vector<int>(m+1,0));
+       
+        for(int i=n-1; i>=0; i--){
+            for(int j=m-1; j>=0; j--)
+            {
+                if(t1[i]==t2[j]){
+                    dp[i][j]=1+dp[i+1][j+1];
+                }else{
+                    dp[i][j]=max(dp[i+1][j], dp[i][j+1]);
+                }
+            }
+        }
+        return dp[0][0];
     }
 };

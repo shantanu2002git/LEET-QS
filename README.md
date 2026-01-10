@@ -56,6 +56,7 @@ THANKS...
 |  |
 | ------- |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
+| [1143-longest-common-subsequence](https://github.com/shantanu2002git/LEET-QS/tree/master/1143-longest-common-subsequence) |
 ## Sorting
 |  |
 | ------- |
@@ -77,4 +78,8 @@ THANKS...
 |  |
 | ------- |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
+## String
+|  |
+| ------- |
+| [1143-longest-common-subsequence](https://github.com/shantanu2002git/LEET-QS/tree/master/1143-longest-common-subsequence) |
 <!---LeetCode Topics End-->

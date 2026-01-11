@@ -39,6 +39,7 @@ THANKS...
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0001-two-sum) |
+| [0084-largest-rectangle-in-histogram](https://github.com/shantanu2002git/LEET-QS/tree/master/0084-largest-rectangle-in-histogram) |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
@@ -74,10 +75,12 @@ THANKS...
 ## Stack
 |  |
 | ------- |
+| [0084-largest-rectangle-in-histogram](https://github.com/shantanu2002git/LEET-QS/tree/master/0084-largest-rectangle-in-histogram) |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 ## Monotonic Stack
 |  |
 | ------- |
+| [0084-largest-rectangle-in-histogram](https://github.com/shantanu2002git/LEET-QS/tree/master/0084-largest-rectangle-in-histogram) |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 ## String
 |  |

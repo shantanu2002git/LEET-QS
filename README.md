@@ -43,6 +43,7 @@ THANKS...
 | [0085-maximal-rectangle](https://github.com/shantanu2002git/LEET-QS/tree/master/0085-maximal-rectangle) |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
+| [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
@@ -65,6 +66,7 @@ THANKS...
 ## Sorting
 |  |
 | ------- |
+| [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 ## Ordered Set
 |  |

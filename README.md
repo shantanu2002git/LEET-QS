@@ -45,6 +45,7 @@ THANKS...
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
+| [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
 ## Math
@@ -67,6 +68,7 @@ THANKS...
 |  |
 | ------- |
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
+| [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 ## Ordered Set
 |  |
@@ -103,4 +105,8 @@ THANKS...
 |  |
 | ------- |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
+## Sliding Window
+|  |
+| ------- |
+| [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 <!---LeetCode Topics End-->

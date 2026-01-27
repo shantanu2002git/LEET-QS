@@ -109,4 +109,16 @@ THANKS...
 |  |
 | ------- |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
+## Graph Theory
+|  |
+| ------- |
+| [3650-minimum-cost-path-with-edge-reversals](https://github.com/shantanu2002git/LEET-QS/tree/master/3650-minimum-cost-path-with-edge-reversals) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [3650-minimum-cost-path-with-edge-reversals](https://github.com/shantanu2002git/LEET-QS/tree/master/3650-minimum-cost-path-with-edge-reversals) |
+## Shortest Path
+|  |
+| ------- |
+| [3650-minimum-cost-path-with-edge-reversals](https://github.com/shantanu2002git/LEET-QS/tree/master/3650-minimum-cost-path-with-edge-reversals) |
 <!---LeetCode Topics End-->

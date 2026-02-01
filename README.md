@@ -48,6 +48,7 @@ THANKS...
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
+| [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
 ## Math
 |  |
@@ -71,6 +72,7 @@ THANKS...
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
+| [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 ## Ordered Set
 |  |
 | ------- |
@@ -123,4 +125,8 @@ THANKS...
 |  |
 | ------- |
 | [3650-minimum-cost-path-with-edge-reversals](https://github.com/shantanu2002git/LEET-QS/tree/master/3650-minimum-cost-path-with-edge-reversals) |
+## Enumeration
+|  |
+| ------- |
+| [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 <!---LeetCode Topics End-->

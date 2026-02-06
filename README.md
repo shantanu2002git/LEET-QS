@@ -51,6 +51,7 @@ THANKS...
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 | [3379-transformed-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3379-transformed-array) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
+| [3634-minimum-removals-to-balance-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3634-minimum-removals-to-balance-array) |
 ## Math
 |  |
 | ------- |
@@ -74,6 +75,7 @@ THANKS...
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
+| [3634-minimum-removals-to-balance-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3634-minimum-removals-to-balance-array) |
 ## Ordered Set
 |  |
 | ------- |
@@ -114,6 +116,7 @@ THANKS...
 |  |
 | ------- |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
+| [3634-minimum-removals-to-balance-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3634-minimum-removals-to-balance-array) |
 ## Graph Theory
 |  |
 | ------- |

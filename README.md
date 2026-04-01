@@ -48,6 +48,7 @@ THANKS...
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
+| [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 | [3379-transformed-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3379-transformed-array) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
@@ -74,6 +75,7 @@ THANKS...
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
+| [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
 | [3634-minimum-removals-to-balance-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3634-minimum-removals-to-balance-array) |
 ## Ordered Set
@@ -92,6 +94,7 @@ THANKS...
 | [0084-largest-rectangle-in-histogram](https://github.com/shantanu2002git/LEET-QS/tree/master/0084-largest-rectangle-in-histogram) |
 | [0085-maximal-rectangle](https://github.com/shantanu2002git/LEET-QS/tree/master/0085-maximal-rectangle) |
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
+| [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 ## Monotonic Stack
 |  |
 | ------- |
@@ -136,5 +139,6 @@ THANKS...
 ## Simulation
 |  |
 | ------- |
+| [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3379-transformed-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3379-transformed-array) |
 <!---LeetCode Topics End-->

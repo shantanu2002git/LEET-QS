@@ -45,6 +45,7 @@ THANKS...
 | [0456-132-pattern](https://github.com/shantanu2002git/LEET-QS/tree/master/0456-132-pattern) |
 | [0744-find-smallest-letter-greater-than-target](https://github.com/shantanu2002git/LEET-QS/tree/master/0744-find-smallest-letter-greater-than-target) |
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
+| [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
@@ -111,6 +112,7 @@ THANKS...
 |  |
 | ------- |
 | [0085-maximal-rectangle](https://github.com/shantanu2002git/LEET-QS/tree/master/0085-maximal-rectangle) |
+| [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 ## Prefix Sum
 |  |
@@ -143,4 +145,16 @@ THANKS...
 | [0657-robot-return-to-origin](https://github.com/shantanu2002git/LEET-QS/tree/master/0657-robot-return-to-origin) |
 | [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3379-transformed-array](https://github.com/shantanu2002git/LEET-QS/tree/master/3379-transformed-array) |
+## Depth-First Search
+|  |
+| ------- |
+| [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
+## Breadth-First Search
+|  |
+| ------- |
+| [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
+## Union-Find
+|  |
+| ------- |
+| [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 <!---LeetCode Topics End-->

@@ -13,8 +13,8 @@ public:
         int md=ele[n/2];
         for(auto it : ele){
             if((md-it)%x) return -1;
-                 tl+=abs(md-it);
+                 tl+=abs(md-it)/x;
         }
-        return (tl%x)==0 ? tl/x : -1;
+        return tl;
     }
 };

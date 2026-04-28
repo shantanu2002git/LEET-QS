@@ -48,6 +48,7 @@ THANKS...
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/2033-minimum-operations-to-make-a-uni-value-grid) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
@@ -57,6 +58,7 @@ THANKS...
 ## Math
 |  |
 | ------- |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/2033-minimum-operations-to-make-a-uni-value-grid) |
 | [3512-minimum-operations-to-make-array-sum-divisible-by-k](https://github.com/shantanu2002git/LEET-QS/tree/master/3512-minimum-operations-to-make-array-sum-divisible-by-k) |
 ## Hash Table
 |  |
@@ -75,6 +77,7 @@ THANKS...
 | ------- |
 | [1200-minimum-absolute-difference](https://github.com/shantanu2002git/LEET-QS/tree/master/1200-minimum-absolute-difference) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/shantanu2002git/LEET-QS/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/2033-minimum-operations-to-make-a-uni-value-grid) |
 | [2363-merge-similar-items](https://github.com/shantanu2002git/LEET-QS/tree/master/2363-merge-similar-items) |
 | [2751-robot-collisions](https://github.com/shantanu2002git/LEET-QS/tree/master/2751-robot-collisions) |
 | [3010-divide-an-array-into-subarrays-with-minimum-cost-i](https://github.com/shantanu2002git/LEET-QS/tree/master/3010-divide-an-array-into-subarrays-with-minimum-cost-i) |
@@ -114,6 +117,7 @@ THANKS...
 | [0085-maximal-rectangle](https://github.com/shantanu2002git/LEET-QS/tree/master/0085-maximal-rectangle) |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 | [1895-largest-magic-square](https://github.com/shantanu2002git/LEET-QS/tree/master/1895-largest-magic-square) |
+| [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/2033-minimum-operations-to-make-a-uni-value-grid) |
 ## Prefix Sum
 |  |
 | ------- |

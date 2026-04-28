@@ -1,29 +1,20 @@
 class Solution {
 public:
     int minOperations(vector<vector<int>>& grid, int x) {
-        vector<int> mtxele;
-        for (auto it : grid) {
-            for (auto i : it) {
-                mtxele.push_back(i);
+   
+        vector<int>ele;
+        for(auto it : grid){
+            for(auto l : it){
+                ele.push_back(l);
             }
         }
-        sort(mtxele.begin(), mtxele.end());\
-        int n=mtxele.size();
-        int midele=mtxele[n/2],res=0;
-
-        for(auto j : mtxele ){
-            if(abs(j-midele)%x){
-                return -1;
-            }
-            res=res+abs(j-midele);
+        sort(ele.begin(), ele.end());
+        int n=ele.size(), tl=0;
+        int md=ele[n/2];
+        for(auto it : ele){
+            if((md-it)%x) return -1;
+                 tl+=abs(md-it);
         }
-
-        return (res%x==0) ? res/x : -1;
-
-        /*
-        1 2 3 5 7
-         1  1 2
-        
-        */
+        return (tl%x)==0 ? tl/x : -1;
     }
 };

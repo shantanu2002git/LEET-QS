@@ -69,6 +69,7 @@ THANKS...
 |  |
 | ------- |
 | [0085-maximal-rectangle](https://github.com/shantanu2002git/LEET-QS/tree/master/0085-maximal-rectangle) |
+| [0124-binary-tree-maximum-path-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0416-partition-equal-subset-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0416-partition-equal-subset-sum) |
 | [0712-minimum-ascii-delete-sum-for-two-strings](https://github.com/shantanu2002git/LEET-QS/tree/master/0712-minimum-ascii-delete-sum-for-two-strings) |
 | [1143-longest-common-subsequence](https://github.com/shantanu2002git/LEET-QS/tree/master/1143-longest-common-subsequence) |
@@ -152,6 +153,7 @@ THANKS...
 ## Depth-First Search
 |  |
 | ------- |
+| [0124-binary-tree-maximum-path-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0124-binary-tree-maximum-path-sum) |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
 ## Breadth-First Search
 |  |
@@ -161,4 +163,12 @@ THANKS...
 |  |
 | ------- |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/shantanu2002git/LEET-QS/tree/master/1391-check-if-there-is-a-valid-path-in-a-grid) |
+## Tree
+|  |
+| ------- |
+| [0124-binary-tree-maximum-path-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0124-binary-tree-maximum-path-sum) |
+## Binary Tree
+|  |
+| ------- |
+| [0124-binary-tree-maximum-path-sum](https://github.com/shantanu2002git/LEET-QS/tree/master/0124-binary-tree-maximum-path-sum) |
 <!---LeetCode Topics End-->
